@@ -30,6 +30,7 @@
         },
         "github.com/cameronshortt/goadrian": {
             "ExtraFilePaths": {
+                "/etc/printers.toml": "printers.toml",
                 "/run/images": "images"
             }
         }
