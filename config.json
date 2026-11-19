@@ -1,0 +1,38 @@
+{
+    "Hostname": "adrian",
+    "Update": {
+        "Hostname": "172.16.1.2",
+        "HTTPPort": "8000",
+        "HTTPPassword": "BengalBots2016"
+    },
+    "Environment": [
+        "GOOS=linux",
+        "GOARCH=arm64"
+    ],
+    "Packages": [
+        "github.com/gokrazy/mkfs",
+        "github.com/caddyserver/caddy/v2/cmd/caddy",
+        "github.com/gokrazy/nsenter",
+        "github.com/gokrazy/podman",
+        "github.com/spod/nftables",
+        "github.com/cameronshortt/goadrian"
+    ],
+    "PackageConfig": {
+        "github.com/caddyserver/caddy/v2/cmd/caddy": {
+            "CommandLineFlags": [
+                "run",
+                "-w",
+                "-c", "/etc/caddy/Caddyfile"
+            ],
+            "ExtraFilePaths": {
+                "/etc/caddy/Caddyfile": "Caddyfile"
+            }
+        },
+        "github.com/cameronshortt/goadrian": {
+            "ExtraFilePaths": {
+                "/run/images": "images"
+            }
+        }
+    },
+    "SerialConsole": "disabled"
+}
